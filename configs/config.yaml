@@ -1,0 +1,21 @@
+paths:
+  raw_data: "data/raw/creditcard.csv"
+  interim_data: "data/interim/cleaned.csv"
+  processed_train: "data/processed/train.csv"
+  processed_test: "data/processed/test.csv"
+  model_dir: "artifacts/models"
+  preprocessor_dir: "artifacts/preprocessors"
+  metrics_dir: "artifacts/metrics"
+  reports_dir: "artifacts/reports"
+  shap_dir: "artifacts/shap"
+
+mlflow:
+  tracking_url: "mlruns"
+  experiment_name: "credit-card-fraud-detection"
+
+target_column: "Class"
+
+logging:
+  level: "INFO"
+  log_dir: "artifacts/reports"
+

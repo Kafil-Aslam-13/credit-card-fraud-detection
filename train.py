@@ -1,0 +1,1 @@
+print("Project structure created successfully")

@@ -1,0 +1,25 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Data & artifacts (too large / regenerable — don't commit)
+data/raw/*
+data/interim/*
+data/processed/*
+artifacts/
+mlruns/
+
+# Keep folder structure but ignore contents
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Env
+.env
+
+# IDE
+.vscode/
+.idea/

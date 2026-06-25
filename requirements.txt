@@ -1,0 +1,39 @@
+# Core ML
+scikit-learn
+xgboost
+imbalanced-learn
+pandas
+numpy
+
+# Explainability
+shap
+
+# Experiment tracking
+mlflow
+
+# API
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Frontend
+streamlit
+requests
+
+# Utilities
+pyyaml
+joblib
+python-dotenv
+
+# Visualization
+matplotlib
+seaborn
+
+# Dev / testing
+pytest
+pytest-cov
+black
+flake8
+flake8
+-e . 
