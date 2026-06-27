@@ -4,7 +4,7 @@ random_state: 42
 smote:
   sampling_strategy: 0.5
   random_state: 42
-  k_neighbours: 5
+  k_neighbors: 5
 
 
 model:

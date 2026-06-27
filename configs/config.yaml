@@ -10,7 +10,7 @@ paths:
   shap_dir: "artifacts/shap"
 
 mlflow:
-  tracking_url: "mlruns"
+  tracking_url: "sqlite:///mlflow.db"
   experiment_name: "credit-card-fraud-detection"
 
 target_column: "Class"

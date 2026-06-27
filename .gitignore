@@ -20,6 +20,10 @@ mlruns/
 # Env
 .env
 
+
+mlflow.db
+mlruns/
+
 # IDE
 .vscode/
 .idea/
