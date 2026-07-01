@@ -11,7 +11,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          lfs: true
           fetch-depth: 0
+
+      - name: Pull Git LFS objects
+        run: |
+
+           git lfs install
+           git lfs pull
 
       
       - name: Set HuggingFace Space secrets
@@ -50,9 +57,10 @@ jobs:
           cp -r app hf_space/
           cp -r src hf_space/
           cp -r configs hf_space/
-          cp -r artifacts hf_space/
           cp requirements.txt hf_space/
           cp setup.py hf_space/
+          cp train.py hf_space/
+          cp predict.py hf_space/
           cp docker/Dockerfile hf_space/
           cp start.sh hf_space/
           cp README.md hf_space/

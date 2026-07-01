@@ -9,7 +9,7 @@ __pycache__/
 data/raw/*
 data/interim/*
 data/processed/*
-# artifacts/
+artifacts/
 mlruns/
 
 # Keep folder structure but ignore contents
