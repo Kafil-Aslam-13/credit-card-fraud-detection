@@ -1,0 +1,20 @@
+[2026-06-25 11:33:18] INFO | test | logger works
+[2026-06-25 12:00:01] INFO | sanity-check | All imports OK
+[2026-06-25 14:26:33] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 5, 'max_depth': 2}
+[2026-06-25 14:26:33] INFO | src.models.trainer | Training started .  X shape: (100, 5),Fraud Cases: 10,Legit cases : 90
+[2026-06-25 14:26:33] INFO | src.models.trainer | training complete.
+[2026-06-25 14:26:33] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-25 14:29:13] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 5, 'max_depth': 2}
+[2026-06-25 14:29:13] INFO | src.models.trainer | Training started .  X shape: (100, 5),Fraud Cases: 10,Legit cases : 90
+[2026-06-25 14:29:14] INFO | src.models.trainer | training complete.
+[2026-06-25 14:29:14] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-25 14:32:02] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 5, 'max_depth': 2}
+[2026-06-25 14:32:02] INFO | src.models.trainer | Training started .  X shape: (100, 5),Fraud Cases: 10,Legit cases : 90
+[2026-06-25 14:32:02] INFO | src.models.trainer | training complete.
+[2026-06-25 14:32:02] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-25 14:36:49] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 5, 'max_depth': 2}
+[2026-06-25 14:36:49] INFO | src.models.trainer | Training started .  X shape: (100, 5),Fraud Cases: 10,Legit cases : 90
+[2026-06-25 14:36:50] INFO | src.models.trainer | training complete.
+[2026-06-25 14:36:50] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-25 14:36:50] INFO | src.models.predictor | running single transaction inference...
+[2026-06-25 14:36:50] INFO | src.models.predictor | Prediction: LEGIT (probability: 0.0380)

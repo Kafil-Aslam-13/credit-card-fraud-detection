@@ -1,0 +1,94 @@
+[2026-06-27 16:01:50] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:01:50] INFO | src.services.data_5training_service | TRAINING PIPELINE STARTED
+[2026-06-27 16:01:50] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:01:50] INFO | src.repositories.dataset_repository | Loading raw dataset from data/raw/creditcard.csv
+[2026-06-27 16:01:53] INFO | src.services.data_2validation_service | Starting Data Validation
+[2026-06-27 16:01:53] INFO | src.services.data_2validation_service | Dataset Shape: (284807, 31)
+[2026-06-27 16:01:53] INFO | src.services.data_2validation_service | data validation passed
+[2026-06-27 16:02:09] INFO | src.repositories.dataset_repository | Saved interim dataset to data/interim/cleaned.csv
+[2026-06-27 16:02:10] INFO | src.services.data_4balancing_service | Class distribution before SMOTE: {0: 226602, 1: 378}
+[2026-06-27 16:02:23] INFO | src.services.data_4balancing_service | Class distribution after SMOTE:  {0: 226602, 1: 113301}
+[2026-06-27 16:02:23] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 300, 'max_depth': 5, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': 'auc', 'random_state': 42}
+[2026-06-27 16:02:23] INFO | src.models.trainer | Training started .  X shape: (339903, 30),Fraud Cases: 113301,Legit cases : 226602
+[2026-06-27 16:02:33] INFO | src.models.trainer | training complete.
+[2026-06-27 16:02:33] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-27 16:05:15] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:05:15] INFO | src.services.data_5training_service | TRAINING PIPELINE STARTED
+[2026-06-27 16:05:15] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:05:15] INFO | src.repositories.dataset_repository | Loading raw dataset from data/raw/creditcard.csv
+[2026-06-27 16:05:17] INFO | src.services.data_2validation_service | Starting Data Validation
+[2026-06-27 16:05:17] INFO | src.services.data_2validation_service | Dataset Shape: (284807, 31)
+[2026-06-27 16:05:17] INFO | src.services.data_2validation_service | data validation passed
+[2026-06-27 16:05:31] INFO | src.repositories.dataset_repository | Saved interim dataset to data/interim/cleaned.csv
+[2026-06-27 16:05:32] INFO | src.services.data_4balancing_service | Class distribution before SMOTE: {0: 226602, 1: 378}
+[2026-06-27 16:05:40] INFO | src.services.data_4balancing_service | Class distribution after SMOTE:  {0: 226602, 1: 113301}
+[2026-06-27 16:05:40] INFO | src.models.model_factory | Creating Model: xgboost with params: {'n_estimators': 300, 'max_depth': 5, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': 'auc', 'random_state': 42}
+[2026-06-27 16:05:40] INFO | src.models.trainer | Training started .  X shape: (339903, 30),Fraud Cases: 113301,Legit cases : 226602
+[2026-06-27 16:05:47] INFO | src.models.trainer | training complete.
+[2026-06-27 16:05:47] INFO | src.models.evaluator | Evaluating model with threshold = 0.5
+[2026-06-27 16:05:48] INFO | src.repositories.artifact_repository | Metrics saved to artifacts/metrics\metrics.json
+[2026-06-27 16:05:48] INFO | src.repositories.model_repository | Model saved to artifacts/models\fraud_model.joblib
+[2026-06-27 16:05:48] INFO | src.repositories.model_repository | Preprocessor saved to artifacts/preprocessors\scaler.joblib
+[2026-06-27 16:05:49] INFO | src.services.data_9mlflow_service | Logged 9 metrics to MLflow.
+[2026-06-27 16:06:11] INFO | src.services.data_9mlflow_service | Model logged to MLflow.
+[2026-06-27 16:06:11] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:06:11] INFO | src.services.data_5training_service | TRAINING PIPELINE COMPLETE
+[2026-06-27 16:06:11] INFO | src.services.data_5training_service | f1=0.6270 | roc_auc=0.9774 | recall=0.8316
+[2026-06-27 16:06:11] INFO | src.services.data_5training_service | ============================================================
+[2026-06-27 16:36:39] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:37:46] INFO | src.services.data_7prediction_service | Loading model artifacts for the first time...
+[2026-06-27 16:37:47] INFO | src.services.data_8shap_service | Building SHAP TreeExplainer...
+[2026-06-27 16:37:47] INFO | src.services.data_8shap_service | SHAP explainer ready.
+[2026-06-27 16:37:47] INFO | src.services.data_7prediction_service | Artifacts loaded and cached.
+[2026-06-27 16:37:47] INFO | src.models.predictor | running single transaction inference...
+[2026-06-27 16:37:47] INFO | src.models.predictor | Prediction: LEGIT (probability: 0.0430)
+[2026-06-27 16:38:43] INFO | src.models.predictor | running single transaction inference...
+[2026-06-27 16:38:43] INFO | src.models.predictor | Prediction: LEGIT (probability: 0.0784)
+[2026-06-27 16:40:42] INFO | app.api.main | API shutting down.
+[2026-06-27 16:40:56] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:41:47] INFO | app.api.main | API shutting down.
+[2026-06-27 16:41:57] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:41:57] INFO | app.api.main | API shutting down.
+[2026-06-27 16:42:06] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:42:06] INFO | app.api.main | API shutting down.
+[2026-06-27 16:42:14] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:43:49] INFO | app.api.main | API shutting down.
+[2026-06-27 16:43:58] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:43:59] INFO | app.api.main | API shutting down.
+[2026-06-27 16:44:07] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:44:07] INFO | app.api.main | API shutting down.
+[2026-06-27 16:44:16] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:44:48] INFO | app.api.main | API shutting down.
+[2026-06-27 16:44:58] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:45:00] INFO | app.api.main | API shutting down.
+[2026-06-27 16:45:08] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:46:04] INFO | app.api.main | API shutting down.
+[2026-06-27 16:46:14] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:48:50] INFO | app.api.main | API shutting down.
+[2026-06-27 16:49:00] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:49:26] INFO | app.api.main | API shutting down.
+[2026-06-27 16:49:35] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:52:48] INFO | app.api.main | API shutting down.
+[2026-06-27 16:53:00] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:53:13] INFO | app.api.main | API shutting down.
+[2026-06-27 16:53:22] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:53:32] INFO | app.api.main | API shutting down.
+[2026-06-27 16:53:41] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:54:46] INFO | app.api.main | API shutting down.
+[2026-06-27 16:54:56] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:54:57] INFO | app.api.main | API shutting down.
+[2026-06-27 16:55:07] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:55:07] INFO | app.api.main | API shutting down.
+[2026-06-27 16:55:17] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:55:17] INFO | app.api.main | API shutting down.
+[2026-06-27 16:55:26] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:57:50] INFO | app.api.main | API shutting down.
+[2026-06-27 16:58:03] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:58:09] INFO | app.api.main | API shutting down.
+[2026-06-27 16:58:17] INFO | app.api.main | API started. Docs at: http://localhost:8000/docs
+[2026-06-27 16:59:05] INFO | src.services.data_7prediction_service | Loading model artifacts for the first time...
+[2026-06-27 16:59:06] INFO | src.services.data_8shap_service | Building SHAP TreeExplainer...
+[2026-06-27 16:59:06] INFO | src.services.data_8shap_service | SHAP explainer ready.
+[2026-06-27 16:59:06] INFO | src.services.data_7prediction_service | Artifacts loaded and cached.
+[2026-06-27 16:59:06] INFO | src.models.predictor | running single transaction inference...
+[2026-06-27 16:59:06] INFO | src.models.predictor | Prediction: FRAUD (probability: 0.9986)
