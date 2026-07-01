@@ -19,7 +19,7 @@ cloudpickle==3.1.2
 colorama==0.4.6
 contourpy==1.3.3
 coverage==7.14.1
--e git+https://github.com/Kafil-Aslam-13/credit-card-fraud-detection.git@335fa311fb087b7034e22a181ea37f7782cc8bf7#egg=credit_card_fraud_detection
+-e git+https://github.com/Kafil-Aslam-13/credit-card-fraud-detection.git@4cb797cb56aa38447fc5928ae469f19cf79ae3c3#egg=credit_card_fraud_detection
 cryptography==48.0.1
 cycler==0.12.1
 databricks-sdk==0.118.0
