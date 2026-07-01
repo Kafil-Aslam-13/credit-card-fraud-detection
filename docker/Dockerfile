@@ -16,6 +16,9 @@ COPY src ./src
 COPY app ./app
 COPY configs ./configs
 COPY start.sh ./start.sh
+COPY train.py ./train.py
+COPY predict.py ./predict.py
+
 
 RUN chmod +x start.sh
 

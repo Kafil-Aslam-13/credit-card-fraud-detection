@@ -41,6 +41,7 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          set -e
           git config --global user.email "aslamkafil13@gmail.com"
           git config --global user.name "Kafil Aslam"
 
