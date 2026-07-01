@@ -43,23 +43,26 @@ class PredictionService:
         self._scaler = None
 
     def _load_artifacts(self):
-        """Load model + scaler from disk and build SHAP explainer.
+        import os
 
-        Called lazily on first prediction. Subsequent calls return
-        cached objects without hitting disk again.
-
-        WHY LAZY LOADING:
-        At API startup, the model might not exist yet (user hasn't
-        trained). Lazy loading lets the API start successfully and
-        only fails at prediction time with a clear error message.
-        """
+        logger.info(f"MODEL PATH EXISTS: {os.path.exists(self.settings.model_dir)}")
+        logger.info(f"MODEL FILE EXISTS: {os.path.exists('artifacts/models/fraud_model.joblib')}")
         if self._model is None:
-            logger.info("Loading model artifacts for the first time...")
+
+            logger.info("Loading model artifacts...")
+
             self._model = self.model_repo.load_model()
             self._scaler = self.model_repo.load_preprocessor()
+
+            if self._model is None or self._scaler is None:
+                raise RuntimeError("Model or scaler failed to load!")
+
             self.shap_svc.fit_explainer(self._model)
-            logger.info("Artifacts loaded and cached.")
+
+            logger.info("Artifacts loaded successfully.")
+
         return self._model, self._scaler
+   
 
     @staticmethod
     def _classify_risk(probability: float) -> str:

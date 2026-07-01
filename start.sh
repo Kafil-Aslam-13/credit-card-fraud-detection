@@ -1,8 +1,5 @@
 ```bash
-#!/bin/bash
-echo "=== DEBUG MODEL CHECK ==="
-ls -R artifacts
-echo "========================"
+
 set -euo pipefail
 
 
