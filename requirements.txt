@@ -37,6 +37,7 @@ pytest-cov
 black
 flake8
 flake8
-kaggle
+kaggle==1.6.17
+kagglesdk==0.0.0
 
 -e . 
