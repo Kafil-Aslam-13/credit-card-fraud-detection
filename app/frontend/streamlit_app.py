@@ -1,15 +1,14 @@
 """Streamlit frontend for Credit Card Fraud Detection."""
 
 import os
-
 import matplotlib.pyplot as plt
 import requests
 import streamlit as st
 from dotenv import load_dotenv
 
-from app.frontend.components.metrics_card import render_metrics_card
-from app.frontend.components.prediction_card import render_prediction_card
-from app.frontend.components.shap_card import render_shap_card
+from components.metrics_card import render_metrics_card
+from components.prediction_card import render_prediction_card
+from components.shap_card import render_shap_card
 
 load_dotenv()
 # Both are in same container so API is just localhost
