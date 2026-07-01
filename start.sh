@@ -28,7 +28,14 @@ fi
 if [ ! -f "artifacts/models/fraud_model.joblib" ]; then
     echo "Training model..."
     python train.py
-    echo "Training complete."
+    python train.py
+
+if [ $? -ne 0 ]; then
+    echo "Training failed!"
+    exit 1
+fi
+
+echo "Training complete."
 else
     echo "Model found. Skipping training."
 fi
