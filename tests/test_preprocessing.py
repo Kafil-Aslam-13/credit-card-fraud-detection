@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from src.services.preprocessing_service import PreprocessingService
+from src.services.data_3preprocessing_service import PreprocessingService
 
 
 @pytest.fixture
