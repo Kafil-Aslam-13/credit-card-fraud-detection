@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  fraud-detection:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: fraud-detection-app
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - BACKEND_URL=http://localhost:8000
+    volumes:
+      # Mount so no rebuild needed after retraining
+      - ./artifacts:/code/artifacts
+      - ./mlflow.db:/code/mlflow.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

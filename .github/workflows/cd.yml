@@ -1,0 +1,39 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-to-huggingface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to HuggingFace Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config --global user.email "aslamkafil13@gmail.com"
+          git config --global user.name "Kafil Aslam"
+
+          git clone https://KAFIL-ASLAM:$HF_TOKEN@huggingface.co/spaces/KAFIL-ASLAM/credit-card-fraud-detection hf_space
+
+          # Copy everything needed
+          cp -r app hf_space/
+          cp -r src hf_space/
+          cp -r configs hf_space/
+          cp -r artifacts hf_space/
+          cp requirements.txt hf_space/
+          cp setup.py hf_space/
+          cp docker/Dockerfile hf_space/
+          cp start.sh hf_space/
+          cp README.md hf_space/
+
+          cd hf_space
+          git add .
+          git commit -m "deploy: ${{ github.sha }}" || echo "Nothing to commit"
+          git push https://KAFIL-ASLAM:$HF_TOKEN@huggingface.co/spaces/KAFIL-ASLAM/credit-card-fraud-detection main
