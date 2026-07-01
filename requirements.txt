@@ -26,6 +26,7 @@ pyyaml
 joblib
 python-dotenv
 
+httpx2
 # Visualization
 matplotlib
 seaborn
