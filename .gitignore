@@ -6,7 +6,7 @@ __pycache__/
 .pytest_cache/
 
 # Data & artifacts (too large / regenerable — don't commit)
-data/raw/*
+
 data/interim/*
 data/processed/*
 # artifacts/

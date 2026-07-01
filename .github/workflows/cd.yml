@@ -13,6 +13,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      
+      - name: Set HuggingFace Space secrets
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Set KAGGLE credentials as HF Space secrets
+          curl -X POST \
+            "https://huggingface.co/api/spaces/KAFIL-ASLAM/credit-card-fraud-detection/secrets" \
+            -H "Authorization: Bearer $HF_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"key": "KAGGLE_USERNAME", "value": "${{ secrets.KAGGLE_USERNAME }}"}'
+
+          curl -X POST \
+            "https://huggingface.co/api/spaces/KAFIL-ASLAM/credit-card-fraud-detection/secrets" \
+            -H "Authorization: Bearer $HF_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"key": "KAGGLE_KEY", "value": "${{ secrets.KAGGLE_KEY }}"}'
       - name: Push to HuggingFace Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
