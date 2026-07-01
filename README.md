@@ -2,7 +2,7 @@
 title: Credit Card Fraud Detection
 emoji: 💳
 colorFrom: red
-colorTo: orange
+colorTo: red
 sdk: docker
 app_port: 8501
 pinned: true

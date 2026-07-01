@@ -20,6 +20,11 @@ def test_root_endpoint():
 
 
 def test_health_endpoint():
-    response = client.get("/api/v1/health")
+    response = client.get("/health")
+
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+
+    data = response.json()
+
+    assert data["status"] == "ok"
+    assert data["model"] == "credit-card-fraud-detection"
