@@ -37,7 +37,14 @@ jobs:
           git config --global user.email "aslamkafil13@gmail.com"
           git config --global user.name "Kafil Aslam"
 
+          git lfs install
+
           git clone https://KAFIL-ASLAM:$HF_TOKEN@huggingface.co/spaces/KAFIL-ASLAM/credit-card-fraud-detection hf_space
+
+          cd hf_space
+          git lfs install
+          git lfs pull || true
+          cd ..
 
           # Copy everything needed
           cp -r app hf_space/

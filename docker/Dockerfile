@@ -9,7 +9,7 @@ WORKDIR /code
 
 COPY requirements-lock.txt setup.py ./
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements-lock.txt && \
+    pip install --no-cache-dir -r requirements.txt && \
     pip install --no-cache-dir kaggle
 
 COPY src ./src
